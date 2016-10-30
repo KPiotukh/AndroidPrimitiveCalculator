@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.concur.kpiotukh.kpiotukh_calculator.MainActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/baseLayoutEditTexts"
+    android:background="@android:color/holo_red_light">
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/secondary_layout_hight"
+        android:id="@+id/relativeLayoutEditTexts"
+        android:background="@android:color/holo_red_light"
+        android:layout_alignParentTop="true">
+
+        <EditText
+            android:layout_width="@dimen/active_view_width"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextNumber1"
+            android:background="@android:color/holo_blue_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_alignParentLeft="true"
+            android:hint="@string/edittext_hint1"
+            android:inputType="number|numberDecimal"/>
+
+        <EditText
+            android:layout_width="@dimen/active_view_width"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextNumber2"
+            android:background="@android:color/holo_blue_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:hint="@string/edittext_hint2"
+            android:inputType="number|numberDecimal"/>
+
+        <TextView
+            android:layout_width="@dimen/active_view_width"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewResult"
+            android:background="@android:color/holo_orange_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:hint="Result:"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_hight"
+        android:id="@+id/relativeLayoutOperationButtons"
+        android:layout_below="@id/relativeLayoutEditTexts"
+        android:background="@color/colorAccent">
+
+        <Button
+            android:layout_width="@dimen/operation_buttons_size"
+            android:layout_height="@dimen/operation_buttons_size"
+            android:id="@+id/buttonPlus"
+            android:background="@android:color/holo_green_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/large_text_size"
+            android:text="+" />
+
+        <Button
+            android:layout_width="@dimen/operation_buttons_size"
+            android:layout_height="@dimen/operation_buttons_size"
+            android:layout_toRightOf="@id/buttonPlus"
+            android:id="@+id/buttonMinus"
+            android:background="@android:color/holo_green_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/large_text_size"
+            android:text="-" />
+
+        <Button
+            android:layout_width="@dimen/operation_buttons_size"
+            android:layout_height="@dimen/operation_buttons_size"
+            android:layout_toRightOf="@id/buttonMinus"
+            android:id="@+id/buttonMultiple"
+            android:background="@android:color/holo_green_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/large_text_size"
+            android:text="*" />
+
+        <Button
+            android:layout_width="@dimen/operation_buttons_size"
+            android:layout_height="@dimen/operation_buttons_size"
+            android:layout_toRightOf="@id/buttonMultiple"
+            android:id="@+id/buttonDevide"
+            android:background="@android:color/holo_green_light"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/large_text_size"
+            android:text="/" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

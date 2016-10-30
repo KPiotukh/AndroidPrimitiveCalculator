@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KPiotukh_calculator</string>
+    <string name="edittext_hint1"><font size="10">Enter number1</font></string>
+    <string name="edittext_hint2"><font size="10">Enter number2</font></string>
+    <string name="message_enter_number"><font size="10">Enter Number(s)</font></string>
+    <string name="message_devision_to_zerro"><font size="10">Can not devide to 0</font></string>
+    <string name="something_wrong"><font size="10">Oop.. Something went wrong</font></string>
+</resources>
