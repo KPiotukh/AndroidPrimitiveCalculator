@@ -2,14 +2,10 @@ package com.concur.kpiotukh.kpiotukh_calculator;
 
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.provider.Settings;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDevide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check for deviding to 0
                 if (getNumber2() != 0.0) {
                     textView.setText(String.valueOf(getNumber1() / getNumber2()));
                 } else {
@@ -83,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                                     dialog.dismiss();
                                     //change color of TextView
                                     textView.setBackgroundColor(color);
-                                    //Thread.currentThread().interrupt(); //DOES NOT WORK!!!
                                 }
                             })
                             .setIcon(android.R.drawable.ic_dialog_alert)
@@ -99,32 +95,32 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Get Number from editTextNumber1
      *
-     * @return int
+     * @return double
      */
     double getNumber1() {
         return getNumber(R.id.editTextNumber1);
     }
 
     /**
-     * get value from editTextNumber2
+     * Get Number from editTextNumber2
      *
-     * @return int
+     * @return double
      */
     double getNumber2() {
         return getNumber(R.id.editTextNumber2);
     }
 
     /**
-     * get value from the field by Id
+     * Get value from the field by Id
      *
      * @param id int
      * @return double
      */
-    private double getNumber(@Nullable @IdRes int id) {
+    private double getNumber(@IdRes int id) {
         double number = 0.0;
         EditText editTextNumber = (EditText) findViewById(id);
         String stringNumber = editTextNumber.getText().toString();
-        if (stringNumber==null || "".equals(stringNumber)) {
+        if (stringNumber == null || "".equals(stringNumber)) {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.message_enter_number)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -135,14 +131,7 @@ public class MainActivity extends AppCompatActivity {
                             dialog.dismiss();
                             //change color of TextView
                             textView.setBackgroundColor(color);
-                            //Thread.currentThread().interrupt();
-                            //DOES NOT WORK!!!
-                            //finish();
-                            try {
-                                throw new Exception();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                            return;
                         }
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)
